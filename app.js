@@ -29,7 +29,6 @@ const entrySchema = new mongoose.Schema({
 const Entry = mongoose.model("Entry", entrySchema);
 
 /* GET REQUESTS */
-
 app.get("/", function(req, res){
 
   // Getting entries from Database

@@ -20,3 +20,9 @@ To quick start this project, I used a front-end template provided by The App Bre
 5. Start up MongoDB with the `mongod` command followed by any flags if your configuration requires it
 6. Start the application with `node app.js` and head to `localhost:3000` in your browser of choice.
 
+
+### Side Notes....
+
+To visit the page where journal entries are composed visit the /compose path to find the input fields for the posts. 
+
+Please do not post things in the live version of this site, as I currently do not have an authentication method. This will be my next step for this project, as it will ensure that only 'admins' of the site can post to the journal.
