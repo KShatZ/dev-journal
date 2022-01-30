@@ -8,7 +8,8 @@ You can view a live version of this project which is using MongoDB Atlas and is 
 1. To put Node.js, Express.js, EJS, & MongoDB/Mongoose principles that I learned into practice through a functional project
 2. To have a place that I can document new programming/development items that I have learned. I feel like it is another way to 'work' with the material that is learned and be able to better understand and retain the information.
 
-- 
+---
+To quick start this project, I used a front-end template provided by The App Brewery from their Full-Stack Web Development Course. After developing the functionality, I edited the front-end (EJS and stylesheet) to match my preference and practice with Dark Mode color schemes.
 
 ## How to run this project on your local machine
 
@@ -18,6 +19,4 @@ You can view a live version of this project which is using MongoDB Atlas and is 
 4. Once dependencies are installed head to the **app.js** file and locate the `mongoose.connect()` function. By default the name of the database is `devJournalDB` but you may change it to whatever you like at the end of the string.
 5. Start up MongoDB with the `mongod` command followed by any flags if your configuration requires it
 6. Start the application with `node app.js` and head to `localhost:3000` in your browser of choice.
-
-
 
