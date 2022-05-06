@@ -6,6 +6,10 @@ body{
 	line-height: 25px;
 }
 
+pre {
+	font-family: system-ui ;
+}
+
 .container-fluid{
    padding: 0;
 }
