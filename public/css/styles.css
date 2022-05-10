@@ -10,6 +10,17 @@ pre {
 	font-family: system-ui ;
 }
 
+select {
+	color: rgba(250, 249, 246, .87);
+	background-color: #292929;
+	border: none;
+}
+
+select:focus {
+	outline: none;
+}
+
+
 .container-fluid{
    padding: 0;
 }
@@ -39,6 +50,19 @@ pre {
 
 
 /* Entires Page */
+.header-box {
+	display: flex;
+	align-items: flex-end;
+}
+
+.entries-header {
+	margin: 0;
+}
+
+.filter-selection {
+	margin-left: auto;
+}
+
 .entry-preview{
 	margin-bottom: 25px;
 }

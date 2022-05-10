@@ -1,8 +1,18 @@
 <%- include("partials/header") %> 
 
 <div class="container">
-
-    <h1>Entries:</h1>
+    <div class="header-box">
+        <h1 class="entries-header">Entries:</h1>
+        <div class="filter-selection">
+            <form class="filter-form" action="/" method="GET">
+                <label for="date_filter">Date:</label>
+                <select name="date_filter" id="date_filter">
+                    <option <%=newest%> value="desc">Newest</option>
+                    <option <%=oldest%> value="asc">Oldest</option>
+                </select>
+            </form>
+        </div>
+    </div>
     <hr style="color: #A2DBFA;">
     
     <!-- Dev Journal Entries -->
@@ -15,7 +25,6 @@
             <a class="read-more" href="/posts/<%=entry._id%>">Read More</a>
         </p>
     <%});%>
-
 </div>
 
 <%- include("partials/footer") %>  
