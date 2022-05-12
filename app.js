@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const indexRouter = require("./routes/index"),
 	aboutRouter = require("./routes/about"),
 	composeRouter = require("./routes/compose"),
-	entryRoutes = require("./routes/entry");
+	entryRouter = require("./routes/entry");
 
 
 // App Config
@@ -21,7 +21,7 @@ mongoose.connect("mongodb://localhost:27017/devJournalDB");
 app.use(indexRouter);
 app.use(aboutRouter);
 app.use(composeRouter);
-app.use(entryRoutes);
+app.use(entryRouter);
 
 app.listen(3000, function() {
   console.log("Server started on port 3000");
