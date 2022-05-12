@@ -1,10 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const Entry = require("../model/entry");
+const Entry = require("../models/entry");
 
-/**
- *      ------ "/" ------
- */ 
+// ------ ROUTES ------
 router.get("/", function(req, res){
 
     if (Object.keys(req.query).length) {
@@ -53,67 +51,6 @@ router.get("/", function(req, res){
         }
       });
     }
-});
-
-/**
- *      ------ "/about" ------
- */
-  
-router.get("/about", function(req, res){
-    res.render("about", {});
-});
-
-/**
- *      ------ "/compose" ------
- */
-router.get("/compose", function(req, res){
-  
-    res.render("compose");
-  
-});
-
-router.post("/compose", function(req, res){
-
-    // Grab Data from POST request
-    const entryDate = req.body.dateInput;
-    const entryTitle = req.body.titleInput;
-    const entryContent = req.body.postInput;
-  
-    console.log(entryDate);
-  
-    const newEntry = new Entry({
-      title: entryTitle,
-      date: entryDate,
-      content: entryContent
-    });
-    newEntry.save();
-  
-    res.redirect("/");
-    
-});
-  
-
-/**
- *      ------ "/posts" ------
- */
-
-router.get("/posts/:postID", function(req, res){
-  
-    const postID = req.params.postID;
-    const dateOptions = {year:"numeric", month:"long", day:"numeric"};
-  
-    Entry.findById(postID, function(err, entry){
-  
-      console.log(entry);
-  
-      res.render("post", {
-        title: entry.title,
-        date: entry.date.toLocaleString("en-us", dateOptions),
-        content: entry.content
-      });
-  
-    });
-  
 });
 
 module.exports = router;
