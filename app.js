@@ -14,22 +14,6 @@ app.use(express.static("public"));
 // Database Config - local
 mongoose.connect("mongodb://localhost:27017/devJournalDB");
 
-const entrySchema = new mongoose.Schema({
-  title: {
-    required: true,
-    type: String
-  },
-  date: {
-    required: true,
-    type: Date
-  },
-  content: {
-    required: true,
-    type: String
-  }
-});
-const Entry = mongoose.model("Entry", entrySchema);
-
 // Routing
 app.use(entryRoutes);
 
