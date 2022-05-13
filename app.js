@@ -2,7 +2,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 const indexRouter = require("./routes/index"),
-	aboutRouter = require("./routes/about"),
 	composeRouter = require("./routes/compose"),
 	entryRouter = require("./routes/entry");
 
@@ -19,7 +18,6 @@ mongoose.connect("mongodb://localhost:27017/devJournalDB");
 
 // Routing
 app.use(indexRouter);
-app.use(aboutRouter);
 app.use(composeRouter);
 app.use(entryRouter);
 
