@@ -1,31 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const Entry = require("../models/entry");
+const composeController = require("../controllers/composeController");
 
-router.get("/compose", function(req, res){
-  
-    res.render("compose");
-  
-});
-
-router.post("/compose", function(req, res){
-
-    // Grab Data from POST request
-    const entryDate = req.body.dateInput;
-    const entryTitle = req.body.titleInput;
-    const entryContent = req.body.postInput;
-  
-    console.log(entryDate);
-  
-    const newEntry = new Entry({
-      title: entryTitle,
-      date: entryDate,
-      content: entryContent
-    });
-    newEntry.save();
-  
-    res.redirect("/");
-    
-});
+router.route("/compose")
+  .get(composeController.getComposePage)
+  .post(composeController.postNewEntry);
 
 module.exports = router;
