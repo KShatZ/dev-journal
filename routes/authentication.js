@@ -6,11 +6,11 @@ const passport = require("../auth/passport-config");
 
 router.route("/register")
     .get(authController.getRegisterPage)
-    .put(authController.registerNewDev);
+    .post(authController.registerNewDev);
 
 router.route("/login")
     .get(authController.getLoginPage)
-    .put(passport.authenticate("local", {
+    .post(passport.authenticate("local", {
         successRedirect: "/",
         failureRedirect: "/login"
     }));
