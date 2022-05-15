@@ -3,12 +3,12 @@ const crypto = require("crypto");
 
 const generate = function (password) {
 
-    const salt = crypto.randomBytes(process.env.SALT_BYTE_LENGTH).toString("hex");
+    const salt = crypto.randomBytes(parseInt(process.env.SALT_BYTE_LENGTH, 10)).toString("hex");
     const hash = crypto.pbkdf2Sync(
         password, 
         salt, 
-        process.env.PBKDF2_ITERATIONS,
-        process.env.PBKDF2_BYTES,
+        parseInt(process.env.PBKDF2_ITERATIONS, 10),
+        parseInt(process.env.PBKDF2_BYTES, 10),
         process.env.PBKDF2_HMAC
     ).toString("hex");
 
@@ -19,8 +19,8 @@ const validate = function (password, hash, salt) {
     const hashToVerify = crypto.pbkdf2Sync(
         password, 
         salt, 
-        process.env.PBKDF2_ITERATIONS,
-        process.env.PBKDF2_BYTES,
+        parseInt(process.env.PBKDF2_ITERATIONS, 10),
+        parseInt(process.env.PBKDF2_BYTES, 10),
         process.env.PBKDF2_HMAC
     ).toString("hex");
 
