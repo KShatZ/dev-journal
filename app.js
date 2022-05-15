@@ -1,12 +1,15 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
+
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
+const passport = require("./auth/passport-config");
 
 const indexRouter = require("./routes/index"),
 	composeRouter = require("./routes/compose"),
-	entryRouter = require("./routes/entry");
+	entryRouter = require("./routes/entry"),
+	authRouter = require("./routes/authentication");
 
 
 // ------ App Config ------
@@ -19,14 +22,13 @@ app.use(express.static("public"));
 // ------ Database Config ------
 mongoose.connect("mongodb://localhost:27017/devJournalDB");
 
-// ------ Session Config ------
+// ------ Session & Passport ------
 const storeOptions = {
 	mongoUrl: process.env.DB_URL,
 	ttl: 60 * 60 * 24 * 7,
 	autoRemove: "interval",
 	autoRemoveInterval: 60 * 24
 }
-
 app.use(session({
 	secret: process.env.SESSION_SECRET,
 	resave: false,
@@ -34,11 +36,15 @@ app.use(session({
 	store: MongoStore.create(storeOptions)
 }));
 
+passport.initialize();
+passport.use(session);
 
 // ------ Routing ------
 app.use(indexRouter);
 app.use(composeRouter);
 app.use(entryRouter);
+app.use(authRouter);
+
 
 app.listen(3000, function() {
   console.log("Server started on port 3000");
