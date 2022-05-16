@@ -34,8 +34,17 @@ const registerNewDev = function (req, res) {
     });
 }
 
+const logOutDev = function (req, res) {
+    if (!req.isAuthenticated()) {
+		return res.redirect("/");
+	}
+	req.logOut();
+	res.redirect("/");
+}
+
 module.exports = {
     getRegisterPage,
     getLoginPage,
-    registerNewDev
+    registerNewDev,
+    logOutDev
 }

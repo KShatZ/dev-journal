@@ -1,0 +1,17 @@
+<%- include("partials/header") %>
+
+<h1>Register</h1>
+
+<form action="/register" method="POST">
+
+    <label for="emailRegister">Email:</label>
+    <input id="emailRegister" type="email" name="username" required>
+
+    <label for="passRegister">Password:</label>
+    <input id="passRegister" type="text" name="password" required>
+
+    <button type="submit">Register</button>
+</form>
+
+
+<%- include("partials/footer") %>

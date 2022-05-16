@@ -45,6 +45,19 @@ app.use(composeRouter);
 app.use(entryRouter);
 app.use(authRouter);
 
+app.get("/account", function (req, res) {
+
+	if (!req.isAuthenticated()) {
+		return res.redirect("login");
+	}
+
+	res.render("account", {
+		auth: true,
+		username: req.user.username
+	});
+});
+
+
 app.listen(3000, function() {
   console.log("Server started on port 3000");
 });
