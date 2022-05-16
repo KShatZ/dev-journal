@@ -10,9 +10,6 @@ router.route("/register")
 
 router.route("/login")
     .get(authController.getLoginPage)
-    .post(passport.authenticate("local", {
-        successRedirect: "/",
-        failureRedirect: "/login"
-    }));
+    .post(passport.authenticate("local", {failureRedirect: "/login", successRedirect: "/"}));
 
 module.exports = router;

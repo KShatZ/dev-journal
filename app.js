@@ -36,8 +36,8 @@ app.use(session({
 	store: MongoStore.create(storeOptions)
 }));
 
-passport.initialize();
-passport.use(session);
+app.use(passport.initialize());
+app.use(passport.session());
 
 // ------ Routing ------
 app.use(indexRouter);
@@ -45,6 +45,16 @@ app.use(composeRouter);
 app.use(entryRouter);
 app.use(authRouter);
 
+
+app.get("/account", function (req, res) {
+
+	if(req.isAuthenticated()) {
+		res.render("account");
+	} else {
+		res.redirect("login");
+	}
+
+});
 
 app.listen(3000, function() {
   console.log("Server started on port 3000");
