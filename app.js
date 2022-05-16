@@ -7,9 +7,9 @@ const MongoStore = require("connect-mongo");
 const passport = require("./auth/passport-config");
 
 const indexRouter = require("./routes/index"),
-	composeRouter = require("./routes/compose"),
-	entryRouter = require("./routes/entry"),
-	authRouter = require("./routes/authentication");
+composeRouter = require("./routes/compose"),
+entryRouter = require("./routes/entry"),
+authRouter = require("./routes/authentication");
 
 
 // ------ App Config ------
@@ -28,7 +28,7 @@ const storeOptions = {
 	ttl: 60 * 60 * 24 * 7,
 	autoRemove: "interval",
 	autoRemoveInterval: 60 * 24
-}
+};
 app.use(session({
 	secret: process.env.SESSION_SECRET,
 	resave: false,
@@ -44,17 +44,6 @@ app.use(indexRouter);
 app.use(composeRouter);
 app.use(entryRouter);
 app.use(authRouter);
-
-
-app.get("/account", function (req, res) {
-
-	if(req.isAuthenticated()) {
-		res.render("account");
-	} else {
-		res.redirect("login");
-	}
-
-});
 
 app.listen(3000, function() {
   console.log("Server started on port 3000");
