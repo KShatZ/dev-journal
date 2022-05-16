@@ -15,9 +15,9 @@ const verify = function (username, password, done) {
 
         const validPass = passValidate(password, dev.hash, dev.salt);
         if (validPass) {
-            return (null, dev);
+            return done(null, dev);
         } else {
-            return (null, false);
+            return done(null, false);
         }
     });
 };
