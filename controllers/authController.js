@@ -3,11 +3,15 @@ const generatePass = require("../auth/utils/password").generate;
 
 
 const getRegisterPage = function (req, res) {
-    res.render("register");
+    res.render("register", {
+        auth: req.isAuthenticated()
+    });
 };
 
 const getLoginPage = function (req, res) {
-    res.render("login");
+    res.render("login", {
+        auth: req.isAuthenticated()
+    });
 };
 
 const registerNewDev = function (req, res) {

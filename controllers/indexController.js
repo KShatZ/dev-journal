@@ -1,4 +1,4 @@
-const filter = require("./filter");
+const filter = require("./utils/filter");
 const Entry = require("../models/entry");
 
 const displayEntries = async function (req, res) {
@@ -9,17 +9,19 @@ const displayEntries = async function (req, res) {
         try {
             const entries = await filter.oldToNew(Entry);
             res.render("home", {
+                auth: req.isAuthenticated(),
                 newest: "",
                 oldest: "selected",
                 entries: entries
             });
         } catch (err) {
-            console.log(err)
+            console.log(err);
         }
     } else {
         try {
             const entries = await filter.newToOld(Entry);
             res.render("home", {
+                auth: req.isAuthenticated(),
                 newest: "selected",
                 oldest: "",
                 entries: entries

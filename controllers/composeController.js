@@ -11,6 +11,7 @@ const postNewEntry = function (req, res) {
           content = req.body.entryContent;
     
     const newEntry = new Entry({
+        auth: req.isAuthenticated(),
         title: title,
         date: date,
         content: content

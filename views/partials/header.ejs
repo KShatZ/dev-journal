@@ -23,7 +23,12 @@
         <div class="collapse navbar-collapse" id="navbarMenu">
           <div class="navbar-nav ms-auto text-center">
             <a href="/" class="nav-link">Entries</a>
-            <a href="/account" class="nav-link">My Account</a>
+            <!-- If Authenticated Show `Acount` else `Login` -->
+            <% if (auth) { %>
+              <a href="/account" class="nav-link">Account</a>
+            <% } else { %>
+              <a href="/login" class="nav-link">Login</a>
+            <% } %>
           </div>
         </div>
       </div>
