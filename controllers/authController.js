@@ -25,7 +25,7 @@ const registerNewDev = function (req, res) {
             console.log(err);
             return getRegisterPage(req, res);
         } else {
-            return getLoginPage(req, res);
+            return res.redirect("login");
         }
     });
 }
