@@ -5,32 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev Journal</title>
+    <link rel="stylesheet" href="/css/font-awesome/css/all.min.css">
     <link rel="stylesheet" href="/css/new-styles.css">
 </head>
 <body>
-
     <nav>
         <ul class="nav-menu">
-            <li class="logo"><a href="/">DevJournal</a></li>
-            <li class="nav-item"><a href="/">Entries</a></li>
+            <li class="logo"><a class="nav-link" class="nav-link" href="/">DevJournal</a></li>
+            <li class="mobile-toggle"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+            <li class="nav-item"><a class="nav-link" href="/">Entries</a></li>
             <%if (auth) {%>
-                <li class="nav-item"><a href="/compose">Compose</a></li>
+                <li class="nav-item"><a class="nav-link" href="/compose">Compose</a></li>
                 <li class="nav-item nav-dropdown">
-                    <a>Account</a>
+                    <a class="nav-link">Account</a>
                     <ul class="dropwdown-menu">
-                        <li class="dropdown-item"><a href="/my-entries">My Entries</a></li>
-                        <li class="dropdown-item"><a href="/profile">Profile</a></li>
-                        <li class="dropdown-item"><a href="/logout">Logout</a></li>
+                        <li class="dropdown-item"><a class="nav-link" href="/my-entries">My Entries</a></li>
+                        <li class="dropdown-item"><a class="nav-link" href="/profile">Profile</a></li>
+                        <li class="dropdown-item"><a class="nav-link" href="/logout">Logout</a></li>
                     </ul>
                 </li>
             <%} else {%>
                 <li class="nav-item nav-dropdown">
-                    <a>Account</a>
+                    <a class="nav-link">Account</a>
                     <ul class="dropdown-menu">
-                        <li class="dropdown-item"><a href="/login">Login</a></li>
-                        <li class="dropdown-item"><a href="/register">Register</a></li>
+                        <li class="dropdown-item"><a class="nav-link" href="/login">Login</a></li>
+                        <li class="dropdown-item"><a class="nav-link" href="/register">Register</a></li>
                     </ul>
                 </li>
             <%}%>
         </ul>
     </nav>
+    <div class="page">
+        Yo
+    </div>
