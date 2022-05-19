@@ -39,15 +39,6 @@ nav {
   list-style: none;
 }
 
-.dropdown-menu {
-  list-style: none;
-  display: none;
-}
-
-.nav-link:hover {
-  color: #4ab9e0;
-}
-
 .logo {
   font-size: 25px;
   /* To Do: Padding */
@@ -68,8 +59,21 @@ nav {
   display: block;
 }
 
+.nav-link:hover {
+  color: #4ab9e0;
+}
+
 .nav-menu li:nth-child(3) {
   margin-top: 30px;
+}
+
+.dropdown-menu {
+  list-style: none;
+  display: none;
+}
+
+.dropdown-active .dropdown-menu {
+  display: block;
 }
 
 .dropdown-item {

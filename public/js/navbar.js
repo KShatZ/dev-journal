@@ -2,8 +2,7 @@
 const mobileToggle = document.querySelector(".mobile-toggle");
 const mobileToggleIcon = document.querySelector(".mobile-toggle i");
 const navMenu = document.querySelector(".nav-menu");
-
-console.log(mobileToggle);
+const navDropdowns = document.querySelectorAll(".nav-dropdown");
 
 const toggleMenu = function () {
     if (navMenu.classList.contains("active")) {
@@ -17,4 +16,17 @@ const toggleMenu = function () {
     }
 };
 
+const toggleDropdownMenu = function () {
+    if (this.classList.contains("dropdown-active")) {
+        this.classList.remove("dropdown-active");
+    } else {
+        this.classList.add("dropdown-active");
+    }
+}
+
+
 mobileToggle.addEventListener("click", toggleMenu);
+
+navDropdowns.forEach(function (dropwdown) {
+    dropwdown.addEventListener("click", toggleDropdownMenu);
+});
