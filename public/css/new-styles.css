@@ -1,11 +1,12 @@
-/* Fonts - Google For Now*/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 /* Background Color: #121212 */
 /* Layer Color:      #212020 */
 /* Accent Color:     #4ab9e0 */ 
 /* Test Color:       #fafbfa */
 
+/* Fonts - Google For Now */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* ------ Globals ------ */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -17,17 +18,62 @@ body {
   font-size: 16px;
 }
 
+a {
+  color: #fafbfa;
+  text-decoration: none;
+}
+
+/* ------ Nav Bar ------ */
 nav {
   background-color: #212020;
   box-shadow: 0px 0px 15px 6px rgba(0,0,0,0.8);
+  padding: 0 50px;
 }
 
-.nav-link, .dropdown-link {
-  color: #fafbfa;
-  text-decoration: none;
-} 
-.nav-link:hover,.dropdown-link:hover {
+.nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  list-style: none;
+}
+
+.dropdown-menu {
+  list-style: none;
+  display: none;
+}
+
+.nav-link:hover {
   color: #4ab9e0;
+}
+
+.logo {
+  font-size: 25px;
+  /* To Do: Padding */
+}
+
+.mobile-toggle {
+  font-size: 20px;
+}
+
+.nav-item {
+  width: 100%;
+  text-align: center;
+  padding: 5px 0px;
+  display: none;
+}
+
+.active .nav-item{
+  display: block;
+}
+
+.nav-menu li:nth-child(3) {
+  margin-top: 30px;
+}
+
+.dropdown-item {
+  padding-left: 15px;
 }
 
 
