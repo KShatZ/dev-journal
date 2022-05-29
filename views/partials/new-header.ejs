@@ -10,30 +10,36 @@
 </head>
 <body>
     <nav>
-        <ul class="nav-menu">
-            <li class="logo"><a class="nav-link" class="nav-link" href="/">DevJournal</a></li>
-            <li class="mobile-toggle"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
-            <li class="nav-item"><a class="nav-link" href="/">Entries</a></li>
-            <%if (auth) {%>
-                <li class="nav-item"><a class="nav-link" href="/compose">Compose</a></li>
-                <li class="nav-item nav-dropdown">
-                    <a class="nav-link">Account</a>
-                    <ul class="dropdown-menu">
-                        <li class="dropdown-item"><a class="nav-link" href="/my-entries">My Entries</a></li>
-                        <li class="dropdown-item"><a class="nav-link" href="/profile">Profile</a></li>
-                        <li class="dropdown-item"><a class="nav-link" href="/logout">Logout</a></li>
-                    </ul>
-                </li>
-            <%} else {%>
-                <li class="nav-item nav-dropdown">
-                    <a class="nav-link">Account</a>
-                    <ul class="dropdown-menu">
-                        <li class="dropdown-item"><a class="nav-link" href="/login">Login</a></li>
-                        <li class="dropdown-item"><a class="nav-link" href="/register">Register</a></li>
-                    </ul>
-                </li>
-            <%}%>
-        </ul>
+        <menu class="nav-menu">
+            <li class="logo"><a href="/">DevJournal</a></li>
+            <li class="mobile-toggle"><a><i class="fa-solid fa-bars"></i></a></li>
+            <li class="nav-items">
+                <ul>
+                    <div>
+                        <li class="nav-item"><a href="/entries">Entries</a></li>
+                        <%if (auth) {%>
+                                <li class="nav-item"><a class="nav-link" href="/compose">Compose</a></li>
+                                <li class="nav-item nav-dropdown-item">
+                                    <a class="nav-link">Account</a>
+                                    <ul class="nav-dropdown">
+                                        <li class="dropdown-item"><a class="nav-link" href="/my-entries">My Entries</a></li>
+                                        <li class="dropdown-item"><a class="nav-link" href="/profile">Profile</a></li>
+                                        <li class="dropdown-item"><a class="nav-link" href="/logout">Logout</a></li>    
+                                    </ul>
+                                </li>
+                        <%} else {%>
+                                <li class="nav-item nav-dropdown-item">
+                                    <a class="nav-link">Account</a>
+                                    <ul class="nav-dropdown">
+                                        <li class="dropdown-item"><a class="nav-link" href="/register">Register</a></li>
+                                        <li class="dropdown-item"><a class="nav-link" href="/login">Log In</a></li>
+                                    </ul>
+                                </li>
+                        <%}%>
+                    </div>
+                </ul>
+            </li>
+        </menu>
     </nav>
     <div class="page">
         Yo

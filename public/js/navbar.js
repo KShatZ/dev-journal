@@ -1,32 +1,32 @@
-// Elements
-const mobileToggle = document.querySelector(".mobile-toggle");
-const mobileToggleIcon = document.querySelector(".mobile-toggle i");
-const navMenu = document.querySelector(".nav-menu");
-const navDropdowns = document.querySelectorAll(".nav-dropdown");
+// Mobile Menu Toggle
+const mobileToggle = document.querySelector(".mobile-toggle i");
+const navItems = document.querySelector(".nav-items");
 
-const toggleMenu = function () {
-    if (navMenu.classList.contains("active")) {
-        navMenu.classList.remove("active");
-        mobileToggleIcon.classList.remove("fa-xmark");
-        mobileToggleIcon.classList.add("fa-bars");
-    } else {
-        navMenu.classList.add("active");
-        mobileToggleIcon.classList.add("fa-xmark");
-        mobileToggleIcon.classList.remove("fa-bars");
-    }
-};
+const toggleMobileMenu = function () {
+    if (navItems.classList.contains("mobile-active")) {
+        navItems.classList.remove("mobile-active");
+        mobileToggle.classList.remove("fa-xmark");
+        mobileToggle.classList.add("fa-bars");
 
-const toggleDropdownMenu = function () {
-    if (this.classList.contains("dropdown-active")) {
-        this.classList.remove("dropdown-active");
     } else {
-        this.classList.add("dropdown-active");
+        navItems.classList.add("mobile-active");
+        mobileToggle.classList.add("fa-xmark");
     }
 }
 
+// Dropdown Toggle
+const navDropdownItems = document.querySelectorAll(".nav-dropdown-item");
 
-mobileToggle.addEventListener("click", toggleMenu);
+const toggleDropdown = function () {
+    if (this.children[1].classList.contains("dropdown-active")) {
+        this.children[1].classList.remove("dropdown-active");
+    } else {
+        this.children[1].classList.add("dropdown-active");
+    }
+}
 
-navDropdowns.forEach(function (dropwdown) {
-    dropwdown.addEventListener("click", toggleDropdownMenu);
+// Event Listeners
+mobileToggle.addEventListener("click", toggleMobileMenu);
+navDropdownItems.forEach(function(dropdown) {
+    dropdown.addEventListener("click", toggleDropdown);
 });
