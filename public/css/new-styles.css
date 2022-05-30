@@ -92,7 +92,7 @@ nav {
 }
 
 .dropdown-item {
-  padding: 5px 0 5px 15px
+  padding: 5px 0 5px 15px;
 }
 
 .logo {
@@ -107,9 +107,62 @@ nav {
   cursor: pointer;
 }
 
-
-
-
+/* Tablets and Xtra Small Desktop */
+@media screen and (min-width: 768px) {
+  nav {
+    padding: 0 75px;
+  }
+  .mobile-toggle {
+    display: none;
+  }
+  .nav-menu {
+    flex-wrap: nowrap;
+  }
+  .nav-items {
+    display: block;
+    width: auto;
+  }
+  .nav-item {
+    display: inline;
+    padding-left: 15px;
+    position: relative;
+  }
+  .dropdown-active.nav-dropdown {
+    position: absolute;
+    left: 15px;
+    top: 49px;
+    padding: 10px 25px 15px 15px;
+    background-color: #212020;
+    white-space: nowrap;
+  }
+  .dropdown-item {
+    padding: 10px 0 0 0;
+  }
+  .nav-dropdown > li:first-child {
+    padding-top: 0;
+  }
+  .nav-dropdown > li:last-child {
+    padding-bottom: 0;
+  }
+}
+/* Small Desktop */
+@media screen and (min-width: 1024px) {
+  nav {
+    padding: 0 100px;
+  }
+  .nav-item {
+    padding-left: 25px;
+  }
+  .dropdown-active.nav-dropdown {
+    left: 25px;
+  }
+}
+/* Larger Desktop */
+@media screen and (min-width: 1920px) {
+  nav {
+    padding: 0 250px;
+  }
+}
 
 
 .page { /* Testing Purposes */
