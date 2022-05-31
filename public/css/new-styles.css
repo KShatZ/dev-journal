@@ -16,11 +16,24 @@
 body {
   font-family: "Montserrat";
   font-size: 16px;
+  background-color: #121212;
+  height: 100vh;
 }
 
 a {
   color: #fafbfa;
   text-decoration: none;
+}
+
+#page-wrapper {
+  /* border: 1px red solid; */
+  width: 350px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.accent {
+  color: #4ab9e0;
 }
 
 /* ------ Nav Bar ------ */
@@ -164,8 +177,153 @@ nav {
   }
 }
 
+/* ------ Register Page ------ */
+.register-text {
+  margin: 40px 0 35px 0 ;
+  color: #fafbfa;
+  line-height: 45px;
+}
 
-.page { /* Testing Purposes */
+.register-text h1 {
+  font-size: 29px;
+}
+
+.register-text p {
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+.register-login-link:hover {
+  color: #4ab9e0;
+}
+
+.register-container {
+  padding: 25px 15px;
+  border: 4px solid #212020;
+  border-radius: 5px;
+  color: #fafbfa;
+}
+
+.register-form ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-form-names li {
+  width: 100%;
+}
+
+.register-form-creds li {
+  width: 100%;
+}
+
+.register-input {
+  font-family: inherit;
+  border: 2px solid #212020;
+  border-radius: 5px;
+  background: none;
+  outline: none;
+  color: #fafbfa;
+  width: 100%;
+  padding: 15px;
+  font-size: 15px;
+}
+
+.register-input:focus {
+  border-color: #4ab9e0;
+  outline-offset: 0;
+}
+
+.register-label {
+  position: relative;
+  bottom: 35px;
+  left: 15px;
+  width: 100%;
+  cursor: text;
+  transition: bottom 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+}
+
+.register-input:focus + .register-label,
+.register-input:not(:placeholder-shown).register-input:not(:focus) + .register-label {
+  font-size: 12px;
   background-color: #121212;
-  height: 100vh;
+  padding: 0 5px;
+  bottom: 63px;
+}
+
+.submit-form {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.register-button {
+  border: 2px solid #212020;
+  border-radius: 5px;
+  outline: none;
+  font-family: inherit;
+  font-size: 15px;
+  background: none;
+  color: #fafbfa;
+  padding: 15px;
+}
+
+.register-button:hover {
+  border-color: #4ab9e0;
+}
+
+.socials-divider {
+  text-align: center;
+  margin-top: 35px;
+}
+
+.socials-divider hr {
+  border: 1.5px solid #212020;
+  background-color: #212020;
+}
+
+.socials-divider span {
+  position: relative;
+  bottom: 12px;
+  background-color: #121212;
+  padding: 0 7px;
+}
+
+.social-button {
+  display: block;
+  margin: auto;
+}
+
+.socials-p {
+  text-align: center;
+}
+
+.socials-auth {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.socials-auth a {
+  display: inline-block;
+  width: 40%;
+  border: 2px solid #212020;
+  font-size: 14px;
+  margin: 0 5px;
+}
+
+.socials-auth a:hover {
+  border-color: #4ab9e0;
+}
+
+.have-account {
+  margin-top: 10px;
+  color: #fafbfa;
+  text-align: center;
+  font-size: 13px;
+}
+
+.register-login-link {
+  text-decoration: underline;
 }
