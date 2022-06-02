@@ -34,6 +34,11 @@ a {
   padding: 15px 30px;
 }
 
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 15px 50px;
+  }
+}
 /* Small Desktop */
 @media screen and (min-width: 1024px) {
   .container {
@@ -69,7 +74,7 @@ nav {
   align-items: center;
   flex-wrap: wrap;
   list-style: none;
-  padding: 5px 0;
+  padding: 10px 0;
 }
 
 .nav-items {
