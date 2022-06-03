@@ -20,7 +20,9 @@ body {
   font-family: "Montserrat";
   font-size: 16px;
   background-color: #121212;
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -28,10 +30,16 @@ a {
   text-decoration: none;
 }
 
+main {
+  flex: 1 1 auto;
+  width: 100%;
+}
+
 .container {
   max-width: 1920px;
   margin: 0 auto;
   padding: 15px 30px;
+  border: 1px solid red;
 }
 
 @media screen and (min-width: 768px) {
@@ -189,6 +197,15 @@ nav {
     left: 25px;
   }
 }
+
+/* ------ Footer ------ */
+
+footer {
+  margin-top: auto;
+  border: 1px solid yellow;
+  height: 100px;
+}
+
 
 /* ------ Register Page ------ */
 
