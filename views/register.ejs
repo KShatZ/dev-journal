@@ -1,41 +1,40 @@
 <%- include("partials/new-header") %>
-
-<main class="container">
-    <div class="register-header">
-        <h1>Sign up for DevJournal<span class="accent">.</span></h1>
-    </div>
-    
-    <div class="register-form-container">
-        <form class="register-form" action="/register" method="POST" name="registerForm" autocomplete="off">
-            <input class="register-input" type="text" id="firstName" name="firstName" placeholder=" " required>
-            <label class="register-label" for="firstName">First Name</label>
-    
-            <input class="register-input" type="text" id="lastName" name="firstName" placeholder=" " required>
-            <label class="register-label" for="lastName">Last Name</label>
+    <main class="container">
+        <div class="register-header">
+            <h1>Sign up for DevJournal<span class="accent">.</span></h1>
+        </div>
         
-            <input class="register-input" type="email" id="emailUsername" name="username" placeholder=" " required>
-            <label class="register-label" for="emailUsername">Email</label>
-    
-            <input class="register-input" type="password" id="password" name="password" placeholder=" " required>  
-            <label class="register-label" for="password">Password</label>
-                
-            <div class="submit-form">
-                <button class="register-button" type="submit">Create Account</button>
-                <p class="register-error">User already exists!</p>
+        <div class="register-form-container">
+            <form action="/register" method="POST" name="registerForm" autocomplete="off">
+                <input class="auth-input" type="text" id="firstName" name="firstName" placeholder=" " required>
+                <label class="auth-label" for="firstName">First Name</label>
+        
+                <input class="auth-input" type="text" id="lastName" name="firstName" placeholder=" " required>
+                <label class="auth-label" for="lastName">Last Name</label>
+            
+                <input class="auth-input" type="email" id="registerEmail" name="username" placeholder=" " required>
+                <label class="auth-label" for="registerEmail">Email</label>
+        
+                <input class="auth-input" type="password" id="registerPassword" name="password" placeholder=" " required>  
+                <label class="auth-label" for="registerPassword">Password</label>
+                    
+                <div class="submit-form">
+                    <button class="register-button" type="submit">Create Account</button>
+                    <p class="register-error">User already exists!</p>
+                </div>
+            </form>
+        
+            <div class="socials-divider">
+                <hr>
+                <span>or</span>
             </div>
-        </form>
-    
-        <div class="socials-divider">
-            <hr>
-            <span>or</span>
+        
+            <p class="socials-auth-p">Sign up with</p>
+            <div class="socials-auth">
+                <a href="/google" role="button"><i class="fa-brands fa-google"></i></a>
+                <a href="/facebook" role="button"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
         </div>
-    
-        <p class="socials-p">Sign up with</p>
-        <div class="socials-auth">
-            <a href="/google" role="button"><i class="fa-brands fa-google"></i></a>
-            <a href="/facebook" role="button"><i class="fa-brands fa-facebook-f"></i></a>
-        </div>
-    </div>
-    <p class="have-account">Have an account? <a class="register-login-link" href="/login">Login</a></p>
-</main>
+        <p class="have-account">Have an account? <a class="register-login-link" href="/login">Login</a></p>
+    </main>
 <%- include("partials/footer") %>

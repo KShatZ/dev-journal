@@ -1,17 +1,33 @@
-<%- include("partials/header") %>
+<%- include("partials/new-header") %>
+    <main class="container login-container">
+        <div class="login-header">
+            <h1>Sign in to DevJournal<span class="accent">.</span></h1>
+        </div>
+        <div class="login-form-container">
+            <form action="/login" method="POST" name="loginForm">
+                <input class="auth-input" type="email" name="username" id="loginEmail" placeholder=" " required>
+                <label class="auth-label" for="loginEmail">Email</label>
 
-<h1>Login:</h1>
+                <input class="auth-input" type="password" name="password" id="loginPassword" placeholder=" " required>
+                <label class="auth-label" for="loginPassword">Password</label>
 
-<form action="/login" method="POST">
+                <div class="submit-form">
+                    <button class="login-button" type="submit">Sign in</button>
+                    <p class="login-error">Wrong username or password!</p>
+                </div>
+            </form>
 
-    <label for="emailLogin">Email:</label>
-    <input type="email" name="username" id="emailLogin">
-
-    <label for="passLogin">Password:</label>
-    <input type="text" name="password" id="passLogin">
-
-    <button type="submit">Login</button>
-</form>
-
-
+            <div class="socials-divider">
+                <hr>
+                <span>or</span>
+            </div>
+            
+            <p class="sign-in-with">Sign in with</p>
+            <div class="socials-auth">
+                <a href="/google" role="button"><i class="fa-brands fa-google"></i></a>
+                <a href="/facebook" role="button"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+        </div>
+        <p class="have-account-login">Dont have an account? <a class="register-login-link" href="/login">Sign up</a></p>
+    </main>
 <%- include("partials/footer") %>

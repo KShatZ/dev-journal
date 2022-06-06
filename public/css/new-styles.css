@@ -34,7 +34,6 @@ a {
 main {
   flex: 1 1 auto;
   width: 100%;
-  padding-bottom: 50px !important;
 }
 
 .container {
@@ -203,7 +202,8 @@ nav {
 /* ------ Footer ------ */
 footer {
   background-color: #1b1b1b;
-  margin-top: auto;
+  flex: 0 0;
+  margin-top: 25px;
 }
 
 .footer-content {
@@ -264,24 +264,37 @@ footer {
     font-size: 14px;
   }
 }
-/* ------ Register Page ------ */
 
-.register-header {
-  line-height: 45px;
-  margin: 25px 0 35px 0 ;
+/* ------ Register/Login Page ------ */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
-.register-header h1 {
+.register-header{
+  line-height: 45px;
+  margin: 25px 0 35px 0;
+}
+
+.login-header {
+  line-height: 45px;
+  margin-top: 25px;
+}
+
+.register-header h1,
+.login-header h1 {
   font-size: 29px;
 }
 
-.register-form-container {
+.register-form-container,
+.login-form-container {
   padding: 25px 15px;
   border: 4px solid #212020;
   border-radius: 5px;
 }
 
-.register-input {
+.auth-input {
   font-family: inherit;
   border: 2px solid #212020;
   border-radius: 5px;
@@ -293,12 +306,12 @@ footer {
   font-size: 15px;
 }
 
-.register-input:focus {
+.auth-input:focus {
   border-color: #4ab9e0;
   outline-offset: 0;
 }
 
-.register-label {
+.auth-label {
   position: relative;
   bottom: 35px;
   left: 15px;
@@ -307,8 +320,8 @@ footer {
   transition: bottom 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
 }
 
-.register-input:focus + .register-label,
-.register-input:not(:placeholder-shown).register-input:not(:focus) + .register-label {
+.auth-input:focus + .auth-label,
+.auth-input:not(:placeholder-shown).auth-input:not(:focus) + .auth-label {
   font-size: 12px;
   background-color: #121212;
   padding: 0 5px;
@@ -331,13 +344,27 @@ footer {
   padding: 15px;
 }
 
-.register-button:hover {
-  border-color: #4ab9e0;
+.login-button {
+  border: 2px solid #212020;
+  border-radius: 5px;
+  outline: none;
+  font-family: inherit;
+  font-size: 15px;
+  background: none;
+  color: #fafbfa;
+  padding: 15px;
 }
 
-.register-error {
+.register-button:hover,
+.login-button:hover {
+  border-color: #4ab9e0;
+  cursor: pointer;
+}
+
+.register-error,
+.login-error {
   display: none;
-  color: red;
+  color: #990000;
   font-size: 12px;
   margin-top: 15px;
 }
@@ -364,8 +391,13 @@ footer {
   margin: auto;
 }
 
-.socials-p {
+.socials-auth-p {
   text-align: center;
+}
+
+.sign-in-with {
+  text-align: center;
+
 }
 
 .socials-auth {
@@ -391,11 +423,31 @@ footer {
   font-size: 13px;
 }
 
+.have-account-login {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 13px;
+}
+
 .register-login-link {
   text-decoration: underline;
 }
 .register-login-link:hover {
   color: #4ab9e0;
+}
+
+@media screen and (min-width: 393px) {
+  .login-header {
+    margin-left: auto;
+    margin-right: auto;
+    width: 332px;
+  }
+
+  .login-form-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 332px;
+  }
 }
 
 @media screen and (min-width: 416px) {
@@ -414,23 +466,34 @@ footer {
 
 /* Tablets and Xtra Small Desktop */
 @media screen and (min-width: 768px) {
-  .register-header {
+  .register-header,
+  .login-header {
     width: 450px;
   }
+
   .register-header h1 {
     width: 355px;
   }
-  .register-form-container {
+
+  .login-header h1 {
+    width: 332px;
+  }
+
+  .register-form-container,
+  .login-form-container {
     width: 450px;
   }
-  .register-input {
+
+  .auth-input {
     padding: 20px;
   }
-  .register-label {
+
+  .auth-label {
     bottom: 40px;
   }
-  .register-input:focus + .register-label,
-  .register-input:not(:placeholder-shown).register-input:not(:focus) + .register-label {
+
+  .auth-input:focus + .auth-label,
+  .auth-input:not(:placeholder-shown).auth-input:not(:focus) + .auth-label {
     bottom: 73px;
   }
 }
