@@ -315,7 +315,6 @@ footer {
   position: relative;
   bottom: 35px;
   left: 15px;
-  width: 100%;
   cursor: text;
   transition: bottom 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
 }
@@ -495,5 +494,104 @@ footer {
   .auth-input:focus + .auth-label,
   .auth-input:not(:placeholder-shown).auth-input:not(:focus) + .auth-label {
     bottom: 73px;
+  }
+}
+
+
+/* ------ Compose Page ------ */
+.compose-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.compose-header {
+  margin: 25px 0;
+}
+
+.compose-form-container {
+  padding: 25px 15px;
+  border: 4px solid #212020;
+  border-radius: 5px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.compose-form-container form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.compose-label {
+  margin-bottom: 10px;
+}
+
+.compose-input {
+  background: none;
+  border: 2px solid #212020;
+  border-radius: 5px;
+  color: #fafbfa;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+.compose-input:focus {
+  border-color: #4ab9e0;
+}
+
+#entryContentInput {
+  resize: none;
+  flex: 1;
+}
+
+.post-entry-btn {
+  border: 2px solid #212020;
+  border-radius: 5px;
+  outline: none;
+  font-family: inherit;
+  font-size: 15px;
+  background: none;
+  color: #fafbfa;
+  padding: 15px;
+  cursor: pointer;
+  align-self: center;
+}
+
+.post-entry-btn:hover {
+  border-color: #4ab9e0;
+}
+
+@media screen and (max-width: 381px) {
+  .compose-input::placeholder {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .compose-input::placeholder {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .compose-form-container {
+    padding: 25px 35px;
+  }
+  .compose-label {
+    font-size: 20px;
+  }
+  .post-entry-btn {
+    font-size: 18px;
+    padding: 15px 25px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .compose-form-container {
+    padding: 25px 45px;
   }
 }
