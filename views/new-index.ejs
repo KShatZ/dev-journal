@@ -1,0 +1,53 @@
+<%- include("partials/new-header") %>
+  <main class="container home-wrapper">
+    <div class="home-header">
+      <h1>Entries<span class="accent">:</span></h1>
+      <form class="filter-form" action="/" method="GET">
+        <select name="dateFilter" id="dateFilter">
+            <option value="desc">Newest</option>
+            <option value="asc">Oldest</option>
+        </select>
+      </form>
+      <hr>
+    </div>
+
+    
+    <div class="entry-card">
+      <div class="entry-card-bio">
+        <p class="entry-card-dev">Posted by: Joe Bob</p>
+        <p class="entry-card-date">June 6, 2022</p>
+      </div>
+      <div class="entry-card-content">
+        <h2>Lorem ipsum dolor sit amet, consectetur</h2>
+        <p>I decided to jump into building a small web dev agency with zero prior experience in this space, an</p>
+      </div>
+    </div>
+    <hr class="entry-seperator">
+
+    <div class="entry-card">
+      <div class="entry-card-bio">
+        <p class="entry-card-dev">Posted by: Alex White</p>
+        <p class="entry-card-date">June 5, 2022</p>
+      </div>
+
+      <div class="entry-card-content">
+        <h2>Quis nostrud exercitation ullamco</h2>
+        <p>I decided to jump into building a small web dev agency with zero prior experience in this space, an</p>
+      </div>
+    </div>
+    <hr class="entry-seperator">
+
+    <div class="entry-card">
+      <div class="entry-card-bio">
+        <p class="entry-card-dev">Posted by: Jessica Turner</p>
+        <p class="entry-card-date">June 5, 2022</p>
+      </div>
+
+      <div class="entry-card-content">
+        <h2>Excepteur sint occaecat cupidatat non proident</h2>
+        <p>I decided to jump into building a small web dev agency with zero prior experience in this space, an</p>
+      </div>
+    </div>
+    <hr class="entry-seperator">
+  </main>
+<%- include("partials/footer") %>

@@ -497,6 +497,64 @@ footer {
   }
 }
 
+/* ------ Home Page (Entries) ------ */
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px 0 0 0;
+}
+
+.filter-form {
+  padding-top: 5px;
+}
+
+#dateFilter {
+  background-color: #121212;
+  border: none;
+  color: #fafbfa;
+  font-size: 16px;
+  outline: none;
+}
+
+.home-header hr {
+  border: 2px solid #212020;
+  margin-top: 5px;
+  width: 100%;
+}
+
+
+.entry-card {
+  padding-top: 25px;
+  padding-bottom: 20px;
+}
+
+.entry-card-bio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+}
+
+.entry-card-content h2 {
+  font-size: 20px;
+  margin: 13px 0 0 0;
+}
+
+.entry-card-content p {
+  display: none;
+}
+
+.entry-seperator {
+  border: 1px solid #212020;
+  /* margin-bottom: 25px; */
+}
 
 /* ------ Compose Page ------ */
 .compose-wrapper {
