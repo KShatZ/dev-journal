@@ -511,8 +511,13 @@ footer {
   margin: 25px 0 0 0;
 }
 
+.home-header h1 {
+  padding-bottom: 8px
+}
+
 .filter-form {
   padding-top: 5px;
+  padding-bottom: 8px
 }
 
 #dateFilter {
@@ -529,10 +534,18 @@ footer {
   width: 100%;
 }
 
+.entry-card-link {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 0;
+}
 
-.entry-card {
-  padding-top: 25px;
-  padding-bottom: 20px;
+.entry-card-link:hover{
+  color: #4ab9e0;
+}
+
+home-wrapper > .entry-card:first-child {
+  border: 1px solid red;
 }
 
 .entry-card-bio {
@@ -540,21 +553,88 @@ footer {
   justify-content: space-between;
   align-items: center;
   font-size: 11px;
+  margin-top: 20px;
 }
 
 .entry-card-content h2 {
   font-size: 20px;
-  margin: 13px 0 0 0;
 }
 
 .entry-card-content p {
-  display: none;
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 18px;
 }
 
 .entry-seperator {
   border: 1px solid #212020;
-  /* margin-bottom: 25px; */
 }
+
+@media screen and (min-width: 768px) {
+  .home-header,
+  .entry-card,
+  .entry-seperator {
+    align-self: center;
+    width: 80%;
+  }
+  .entry-card-bio {
+    order: 1;
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+  .entry-card-content {
+    order: 2;
+  }
+  .entry-card-content p {
+    display: block;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 20px;
+    margin-top: 8px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .home-header,
+  .entry-card,
+  .entry-seperator {
+    align-self: center;
+    width: 75%;
+  }
+  .home-header h1{
+    font-size: 40px;
+  }
+  #dateFilter {
+    font-size: 18px;
+  }
+  .entry-card-link {
+    padding: 30px 0;
+  }
+  .entry-card-bio {
+    font-size: 13px;
+  }
+  .entry-card-content h2 {
+    font-size: 22px;
+  }
+  .entry-card-content p {
+    font-size: 15px;
+    line-height: 24px ;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .home-header,
+  .entry-card,
+  .entry-seperator {
+    align-self: center;
+    width: 50%;
+  }
+  .home-wrapper.container {
+      padding: 15px 75px;
+  }
+}
+
 
 /* ------ Compose Page ------ */
 .compose-wrapper {
