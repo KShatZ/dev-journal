@@ -1,4 +1,4 @@
-const dateFilter = document.getElementById("date_filter");
+const dateFilter = document.getElementById("dateFilter");
 
 dateFilter.addEventListener("change", function (event) {
     this.parentElement.submit();

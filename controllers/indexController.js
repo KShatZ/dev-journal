@@ -3,7 +3,7 @@ const Entry = require("../models/entry");
 
 const displayEntries = async function (req, res) {
 
-    const filterOption = req.query.date_filter;
+    const filterOption = req.query.dateFilter;
 
     if (filterOption === "asc") {
         try {
@@ -12,7 +12,8 @@ const displayEntries = async function (req, res) {
                 auth: req.isAuthenticated(),
                 newest: "",
                 oldest: "selected",
-                entries: entries
+                entries: entries,
+                path: req.path
             });
         } catch (err) {
             console.log(err);
@@ -24,7 +25,8 @@ const displayEntries = async function (req, res) {
                 auth: req.isAuthenticated(),
                 newest: "selected",
                 oldest: "",
-                entries: entries
+                entries: entries,
+                path: req.path
             });
         } catch (err) {
             console.log(err);

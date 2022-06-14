@@ -1,30 +1,31 @@
-<%- include("partials/header") %> 
-
-<div class="container">
-    <div class="header-box">
-        <h1 class="entries-header">Entries:</h1>
-        <div class="filter-selection">
-            <form class="filter-form" action="/" method="GET">
-                <label for="date_filter">Date:</label>
-                <select name="date_filter" id="date_filter">
-                    <option <%=newest%> value="desc">Newest</option>
-                    <option <%=oldest%> value="asc">Oldest</option>
-                </select>
-            </form>
-        </div>
+<%- include("partials/new-header") %>
+  <main class="container home-wrapper">
+    <div class="home-header">
+      <h1>Entries<span class="accent">:</span></h1>
+      <form class="filter-form" action="/" method="GET">
+        <select name="dateFilter" id="dateFilter">
+            <option <%=newest%> value="desc">Newest</option>
+            <option <%=oldest%> value="asc">Oldest</option>
+        </select>
+      </form>
+      <hr>
     </div>
-    <hr style="color: #A2DBFA;">
-    
-    <!-- Dev Journal Entries -->
-    <%entries.forEach(function(entry){%>
-        <h2 class="entry-title"> <%= entry.title %> </h2>
-        <small class="date-pub"> <%= entry.date.toLocaleString("en-us", {year: "numeric", month:"long", day: "numeric"}) %> </small>
-        <p class="entry-preview"> 
-            <%= entry.content.substring(0,99) + "..." %> 
-            <br>
-            <a class="read-more" href="/entry/<%=entry._id%>">Read More</a>
-        </p>
-    <%});%>
-</div>
 
-<%- include("partials/footer") %>  
+    <%entries.forEach(function (entry) {%>
+      <div class="entry-card">
+        <a class="entry-card-link" href="/entry/<%=entry._id%>">
+          <div class="entry-card-content">
+            <h2><%=entry.title%></h2>
+            <p><%=entry.content.substring(0, 250) + "..."%></p>
+          </div>
+          <div class="entry-card-bio">
+            <p class="entry-card-dev">Posted by: Joe Bob</p>
+            <p class="entry-card-date"><%=entry.date.toLocaleString("en-us", {year: "numeric", month:"long", day: "numeric"})%></p>
+          </div>
+        </a>
+      </div>
+      <hr class="entry-seperator">
+    <%});%>
+
+  </main>
+<%- include("partials/footer") %>
