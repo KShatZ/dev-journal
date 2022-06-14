@@ -2,7 +2,14 @@ const express = require("express");
 const Entry = require("../models/entry");
 
 const getComposePage = function (req, res) {
-    res.render("compose");
+    if (req.isAuthenticated()) {
+        res.render("compose", {
+            auth: 1,
+            path: req.path
+        });
+    } else {
+        res.redirect("/login");
+    }
 };
 
 const postNewEntry = function (req, res) {

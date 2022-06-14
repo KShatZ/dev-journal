@@ -1,34 +1,18 @@
-<%- include("partials/header") %>
+<%- include("partials/header") %> 
+  <main class="container compose-wrapper">
+    <h1 class="compose-header">New Dev Entry<span class="accent">:</span></h1>
 
-<div class="container">
-    <h1>Compose</h1>
+    <div class="compose-form-container">
+      <form id="compose-form" action="/new-compose" method="POST" name="newDevEntryForm" autocomplete="off">
+        <label class="compose-label" for="entryTitle">Title<span class="accent">:</span></label>
+        <input id="entryTitle" class="compose-input" name="entryTitle" type="text" placeholder="Enter a title for your new entry." required>
 
-    <form action="/compose" method="POST">
-        <!-- 'Date' Input -->
-        <div class="form-group">
-            <label>
-                Date
-                <input type="date" class="form-control input-color" name="entryDate" required>
-            </label>
-        </div>
+        <label class="compose-label" for="entryContentInput">Content<span class="accent">:</span></label>
+        <textarea id="entryContentInput" class="compose-input" name="entryContent" placeholder="Enter content for your new entry." required></textarea>
 
-        <!-- 'Title' Input -->
-        <div class="form-group">
-            <label for="titleInput">Title</label>
-            <input type="text" id="titleInput" class="form-control input-color" name="entryTitle" required>
-        </div>
-
-        <!-- 'Content' Input -->
-        <div class="form-group">
-            <label for="postInput">Post</label>
-            <textarea id="postInput" name="entryContent" rows="5" class="form-control input-color" required></textarea>
-        </div>
-
-        <div class="d-grid d-md-block">
-            <button type="submit" class="btn btn-primary btn-block compose-button">Publish</button>
-        </div>
-
-    </form>
-</div>
-
-<%- include("partials/footer") %>
+        <button class="post-entry-btn" type="submit">Post Entry</button>
+      </form>
+    </div>
+  </main>
+<%- include("partials/footer") %> 
+<!-- CKEditor -->
