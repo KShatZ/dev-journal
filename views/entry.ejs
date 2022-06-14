@@ -1,11 +1,26 @@
 <%- include("partials/header") %>
-
-<div class="container">
-    <h1> <%= title %> </h1>
-    <small> Published: <%= date %> </small>
-    <br><br>
-
-    <pre><p id="post-content"><%= content %></p></pre>
-</div>
-
+<main class="container entry-wrapper">
+  <div class="entry-post-dev-card">
+    <div class="dev-pic-container">
+      <img src="/img/profile.jpg" alt="">
+    </div>
+    <div class="entry-post-info">
+      <p class="entry-post-author">Jennifer Dempsey</p>
+      <p class="entry-post-date"><%=date%></p>
+    </div>
+    <div class="entry-dev-socials">
+      <a class="entry-dev-socials-menu" href="#"><i class="fa-solid fa-ellipsis"></i></i></a>
+      <div class="entry-dev-social-icons">
+        <a class="entry-dev-social-icon" href="#"><i class="fa-brands fa-github"></i></i></a>
+        <a class="entry-dev-social-icon" href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a class="entry-dev-social-icon" href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a class="entry-dev-social-icon" href="#"><i class="fa-solid fa-user"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="entry-post">
+    <h1 class="entry-post-title"><%=title%></h1>
+    <p class="entry-post-content"><%=content%></p>
+  </div>
+</main>
 <%- include("partials/footer") %>
