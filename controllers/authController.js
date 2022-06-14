@@ -13,9 +13,14 @@ const getRegisterPage = function (req, res) {
 };
 
 const getLoginPage = function (req, res) {
-    res.render("login", {
-        auth: req.isAuthenticated()
-    });
+    if (!req.isAuthenticated()) {
+        res.render("login", {
+            auth: 0,
+            path: req.path
+        });
+    } else {
+        res.redirect("/");
+    }
 };
 
 const registerNewDev = function (req, res) {

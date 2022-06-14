@@ -12,7 +12,6 @@ router.route("/login")
     .get(authController.getLoginPage)
     .post(passport.authenticate("local", {failureRedirect: "/login", successRedirect: "/"}));
 
-
 router.get("/logout", authController.logOutDev);
 
 module.exports = router;
