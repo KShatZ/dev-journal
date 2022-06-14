@@ -1,11 +1,15 @@
 const Dev = require("../models/dev");
 const generatePass = require("../auth/utils/password").generate;
 
-
 const getRegisterPage = function (req, res) {
-    res.render("register", {
-        auth: req.isAuthenticated()
-    });
+    if (!req.isAuthenticated()) {
+        res.render("register", {
+            auth: 0,
+            path: req.path
+        });
+    } else {
+        res.redirect("/");
+    }
 };
 
 const getLoginPage = function (req, res) {
