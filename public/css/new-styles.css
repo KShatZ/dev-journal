@@ -704,6 +704,11 @@ footer {
   }
 }
 @media screen and (min-width: 1024px) {
+  .compose-header,
+  .compose-form-container {
+    align-self: center;
+    width: 80%;
+  }
   .compose-form-container {
     padding: 25px 35px;
   }
@@ -716,10 +721,20 @@ footer {
   }
 }
 @media screen and (min-width: 1440px) {
+  .compose-header,
+  .compose-form-container {
+    align-self: center;
+    width: 70%;
+  }
+  
   .compose-form-container {
     padding: 25px 45px;
   }
 }
+
+/* compose-header */
+/* compose-form-container */
+
 
 /* ------ Entry Post Page ------ */
 .entry-wrapper {
