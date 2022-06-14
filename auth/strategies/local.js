@@ -23,4 +23,4 @@ const verify = function (username, password, done) {
 };
 
 const localStrategy = new LocalStrategy(verify);
-module.exports = localStrategy;
+module.exports = localStrategy; 
