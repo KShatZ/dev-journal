@@ -13,12 +13,11 @@ const getComposePage = function (req, res) {
 };
 
 const postNewEntry = function (req, res) {
-    const date = req.body.entryDate,
+    const date = new Date(),
           title = req.body.entryTitle,
           content = req.body.entryContent;
     
     const newEntry = new Entry({
-        auth: req.isAuthenticated(),
         title: title,
         date: date,
         content: content
