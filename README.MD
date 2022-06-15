@@ -4,6 +4,8 @@ This is a small *'blog-like'* project which allows users to dynamically post jou
 
 You can view a live version of this project which is using MongoDB Atlas and is hosted with Heroku [here](https://kirill-dev-journal.herokuapp.com/)
 
+*The current live version does not represent this github repository. I have did an entire front-end rework and am currently working on adding more features in order to create a Medium.com like experience.*
+
 **I built this project for two main reasons:** 
 1. To put Node.js, Express.js, EJS, & MongoDB/Mongoose principles that I learned into practice through a functional project
 2. To have a place that I can document new programming/development items that I have learned. I feel like it is another way to 'work' with the material that is learned and be able to better understand and retain the information.
@@ -19,10 +21,3 @@ To quick start this project, I used a front-end template provided by The App Bre
 4. Once dependencies are installed head to the **app.js** file and locate the `mongoose.connect()` function. By default the name of the database is `devJournalDB` but you may change it to whatever you like at the end of the string.
 5. Start up MongoDB with the `mongod` command followed by any flags if your configuration requires it
 6. Start the application with `node app.js` and head to `localhost:3000` in your browser of choice.
-
-
-### Side Notes....
-
-To visit the page where journal entries are composed visit the /compose path to find the input fields for the posts. 
-
-Please do not post things in the live version of this site, as I currently do not have an authentication method. This will be my next step for this project, as it will ensure that only 'admins' of the site can post to the journal.
