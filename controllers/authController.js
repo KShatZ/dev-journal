@@ -27,6 +27,8 @@ const registerNewDev = function (req, res) {
 
     const userAuth = generatePass(req.body.password);
     const newDev = new Dev({
+        firstName: req.body.firstName,
+        lastName:req.body.lastName,
         username: req.body.username,
         hash: userAuth.hash,
         salt: userAuth.salt
