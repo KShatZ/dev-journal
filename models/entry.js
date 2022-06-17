@@ -12,6 +12,16 @@ const entrySchema = new mongoose.Schema({
     content: {
         type: String,
         required: true
+    },
+    developer: {
+        firstName: {
+            type: String,
+            required: true
+        }, 
+        lastName: {
+            type: String,
+            required: true
+        }
     }
 });
 
