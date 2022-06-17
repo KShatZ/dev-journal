@@ -14,6 +14,7 @@ const getEntry = function (req, res) {
         res.render("entry", {
             auth: req.isAuthenticated(),
             path: req.path,
+            developer: entry.developer,
             title: entry.title,
             date: entry.date.toLocaleString("en-us", dateOptions),
             content: entry.content
