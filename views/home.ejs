@@ -19,7 +19,7 @@
             <p><%=entry.content.substring(0, 250) + "..."%></p>
           </div>
           <div class="entry-card-bio">
-            <p class="entry-card-dev">Posted by: Joe Bob</p>
+            <p class="entry-card-dev">Posted by: <%=entry.developer.firstName%> <%=entry.developer.lastName%></p>
             <p class="entry-card-date"><%=entry.date.toLocaleString("en-us", {year: "numeric", month:"long", day: "numeric"})%></p>
           </div>
         </a>
