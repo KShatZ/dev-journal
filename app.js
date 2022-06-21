@@ -9,7 +9,8 @@ const passport = require("./auth/passport-config");
 const indexRouter = require("./routes/index"),
 composeRouter = require("./routes/compose"),
 entryRouter = require("./routes/entry"),
-authRouter = require("./routes/authentication");
+authRouter = require("./routes/authentication"),
+comingRouter = require("./routes/comingSoon");
 
 
 // ------ App Config ------
@@ -44,6 +45,7 @@ app.use(indexRouter);
 app.use(composeRouter);
 app.use(entryRouter);
 app.use(authRouter);
+app.use(comingRouter);
 
 app.get("/account", function (req, res) {
 
