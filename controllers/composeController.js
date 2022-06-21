@@ -3,7 +3,6 @@ const Entry = require("../models/entry");
 
 const getComposePage = function (req, res) {
     if (req.isAuthenticated()) {
-        console.log(req.user);
         res.render("compose", {
             auth: 1,
             path: req.path
