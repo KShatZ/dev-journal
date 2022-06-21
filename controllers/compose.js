@@ -3,6 +3,7 @@ const Entry = require("../models/entry");
 
 const getComposePage = function (req, res) {
     if (req.isAuthenticated()) {
+        console.log(req.user._id);
         res.render("compose", {
             auth: 1,
             path: req.path
@@ -15,16 +16,14 @@ const getComposePage = function (req, res) {
 const postNewEntry = function (req, res) {
     const date = new Date(),
           title = req.body.entryTitle,
-          content = req.body.entryContent;
+          content = req.body.entryContent,
+          devID = req.user._id;
     
     const newEntry = new Entry({
         title: title,
         date: date,
         content: content,
-        developer: {
-            firstName: req.user.firstName,
-            lastName: req.user.lastName
-        }
+        developer: devID
     });
 
     newEntry.save(function (err) {
