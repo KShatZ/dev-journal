@@ -14,14 +14,9 @@ const entrySchema = new mongoose.Schema({
         required: true
     },
     developer: {
-        firstName: {
-            type: String,
-            required: true
-        }, 
-        lastName: {
-            type: String,
-            required: true
-        }
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Dev",
+        required: true
     }
 });
 
