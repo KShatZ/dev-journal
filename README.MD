@@ -1,10 +1,10 @@
+![DevJournal Screenshots](/readme-sc.png?raw=true)
+
 # What is this project?
 
 This is a small *'blog-like'* project which allows users to dynamically post journal entries regarding their development journey. 
 
 You can view a live version of this project which is using MongoDB Atlas and is hosted with Heroku [here](https://devjournal-kirill.herokuapp.com/)
-
-*The current live version does not represent this github repository. I have did an entire front-end rework and am currently working on adding more features in order to create a Medium.com like experience.*
 
 **I built this project for two main reasons:** 
 1. To put Node.js, Express.js, EJS, & MongoDB/Mongoose principles that I learned into practice through a functional project
