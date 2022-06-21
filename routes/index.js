@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const Entry = require("../models/entry");
-const indexController = require("../controllers/indexController");
+const indexController = require("../controllers/index");
 
 
 // ------ ROUTES ------

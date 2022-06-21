@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const composeController = require("../controllers/composeController");
+const composeController = require("../controllers/compose");
 
 router.route("/compose")
   .get(composeController.getComposePage)

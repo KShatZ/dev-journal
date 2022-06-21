@@ -10,7 +10,7 @@ const indexRouter = require("./routes/index"),
 composeRouter = require("./routes/compose"),
 entryRouter = require("./routes/entry"),
 authRouter = require("./routes/authentication"),
-comingRouter = require("./routes/comingSoon");
+comingRouter = require("./routes/coming-soon");
 
 
 // ------ App Config ------
