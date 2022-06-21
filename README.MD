@@ -2,7 +2,7 @@
 
 This is a small *'blog-like'* project which allows users to dynamically post journal entries regarding their development journey. 
 
-You can view a live version of this project which is using MongoDB Atlas and is hosted with Heroku [here](https://kirill-dev-journal.herokuapp.com/)
+You can view a live version of this project which is using MongoDB Atlas and is hosted with Heroku [here](https://devjournal-kirill.herokuapp.com/)
 
 *The current live version does not represent this github repository. I have did an entire front-end rework and am currently working on adding more features in order to create a Medium.com like experience.*
 
