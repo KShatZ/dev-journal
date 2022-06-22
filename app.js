@@ -21,7 +21,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 // ------ Database Config ------
-mongoose.connect("mongodb://localhost:27017/devJournalDB");
+mongoose.connect(process.env.DB_URL);
 
 // ------ Session & Passport ------
 const storeOptions = {
