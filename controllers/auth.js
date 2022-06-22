@@ -25,8 +25,6 @@ const getLoginPage = function (req, res) {
 
 const registerNewDev = function (req, res) {
 
-    //Hello
-
     const userAuth = generatePass(req.body.password);
     const newDev = new Dev({
         firstName: req.body.firstName,
