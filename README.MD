@@ -26,13 +26,13 @@ In the future React may be used to improve the overal UX of the application as t
 
 3. In your project directory run `npm install` to install all the required dependencies. Updates may break functionality so proceed with caution.
 
-4. The project files contain a couple environemnt variables that will need to be set in order for the application to work. Below are sample values that you may use:
-- DB_URL=mongodb://localhost:27017/devJournalDB
-- SESSION_SECRET=devjournalsecret
-- SALT_BYTE_LENGTH=32
-- PBKDF2_ITERATIONS=10,000
-- PBKDF2_BYTES=64
-- PBKDF2_HMAC=sha512
+4. The project files contain a couple environmennt variables that will need to be set in order for the application to work. Below are sample values that you may use:
+  - DB_URL=mongodb://localhost:27017/devJournalDB
+  - SESSION_SECRET=devjournalsecret
+  - SALT_BYTE_LENGTH=32
+  - PBKDF2_ITERATIONS=10,000
+  - PBKDF2_BYTES=64
+  - PBKDF2_HMAC=sha512
 
 5. Start up MongoDB with the `mongod` command followed by any flags if your configuration requires it.
 
