@@ -43,6 +43,10 @@ main {
   padding: 15px 30px;
 }
 
+.hidden {
+  display:none;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     padding: 15px 50px;
@@ -361,8 +365,7 @@ footer {
 
 .register-error,
 .login-error {
-  display: none;
-  color: #990000;
+  color: #c40e0e;
   font-size: 12px;
   margin-top: 15px;
 }
@@ -492,6 +495,14 @@ footer {
   .auth-input:not(:placeholder-shown).auth-input:not(:focus) + .auth-label {
     bottom: 73px;
   }
+}
+/* Chrome autofill configs */
+input:-webkit-autofill {transition: background-color 5000s ease-in-out 0s;}
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fafbfa;
+}
+input:-webkit-autofill:not(focus) {
+  -webkit-text-fill-color: #fafbfa;
 }
 
 /* ------ Home Page (Entries) ------ */
