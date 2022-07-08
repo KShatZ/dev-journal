@@ -11,8 +11,14 @@
   </footer>
 
   <script src="/js/navbar.js"></script>
-  <%if (path === "/" ) {%>
-    <script src="js/filter.js"></script>
-  <%}%>
+  
+  <%switch (path) {
+    case "/":%>
+      <script src="js/filter.js"></script>
+      <%break;
+    case "/register":%>
+      <script src="js/register.js"></script>
+      <%break;
+  }%>
 </body>
 </html>
