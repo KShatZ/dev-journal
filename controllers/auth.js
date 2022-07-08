@@ -49,7 +49,7 @@ const registerNewDev = async function (req, res) {
             return res.status(201).end();
         }
     });
-}
+};
 
 const logOutDev = function (req, res) {
     if (!req.isAuthenticated()) {
@@ -57,11 +57,11 @@ const logOutDev = function (req, res) {
 	}
 	req.logOut();
 	res.redirect("/");
-}
+};
 
 module.exports = {
     getRegisterPage,
     getLoginPage,
     registerNewDev,
     logOutDev
-}
+};
