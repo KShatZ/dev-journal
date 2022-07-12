@@ -23,24 +23,28 @@ registerForm.addEventListener("submit", async function (event) {
         body: JSON.stringify(formData)
     };
 
-    const response = await fetch("/register", options);
-    const status = response.status;
+    const response = await fetch("/register", options),
+    status = response.status;
 
+    if (status === 201) {
+        window.location.href = "/login";
+        return;
+    }
+
+    const error = document.getElementById("auth-err");
     switch (status) {
         case 500:
-            window.location.href = "/register";
+            error.innerHTML = "Unable to register you at this time. Please try again later..."
             break;
-
         case 409:
-            const emailInput = document.getElementById("registerEmail"),
-            error = document.getElementById("auth-err"); 
-    
-            emailInput.setAttribute("style", "border-color: #F0240A;");
-            error.classList.remove("hidden");
-            error.classList.add("register-error");
-            break;
+            const emailInput = document.getElementById("registerEmail");
 
+            emailInput.setAttribute("style", "border-color: #F0240A;");
+            error.innerHTML = "User already exists!";
+            break;
         default:
-            window.location.href = "/login";
+            break;
     }
+    error.classList.add("register-error"); 
+    error.classList.remove("hidden"); 
 });

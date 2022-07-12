@@ -4,7 +4,7 @@
             <h1>Sign in to DevJournal<span class="accent">.</span></h1>
         </div>
         <div class="login-form-container">
-            <form action="/login" method="POST" name="loginForm">
+            <form id="loginForm" action="/login" method="POST" name="loginForm">
                 <input class="auth-input" type="email" name="username" id="loginEmail" placeholder=" " required>
                 <label class="auth-label" for="loginEmail">Email</label>
 
@@ -13,7 +13,7 @@
 
                 <div class="submit-form">
                     <button class="login-button" type="submit">Sign in</button>
-                    <p id="auth-err" class="hidden">Wrong username or password!</p>
+                    <p id="auth-err" class="hidden"></p>
                 </div>
             </form>
 
