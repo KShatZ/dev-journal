@@ -7,17 +7,16 @@ loginForm.addEventListener("submit", async function (event) {
     const formData = {
         username: loginForm.username.value.toLowerCase(),
         password: loginForm.password.value
-    };
-
-    const options = {
+    },
+    options = {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         credentials: "include",
         body: JSON.stringify(formData)
     }
 
-    const response = await fetch("/login", options);
-    const status = response.status;
+    const response = await fetch("/login", options),
+    status = response.status;
 
     if (status === 200) {
         window.location.href = "/"
