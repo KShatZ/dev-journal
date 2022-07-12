@@ -28,7 +28,6 @@ const registerNewDev = async function (req, res) {
 
     const userExists = await Dev.exists({username: req.body.username});
     if (userExists) {
-        console.log("User exists...");
         return res.status(409).end();
     } 
 
