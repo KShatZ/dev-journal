@@ -50,8 +50,6 @@ const registerNewDev = async function (req, res) {
         }
     });
 };
-<<<<<<< HEAD
-=======
 
 const loginDev = function (req, res, next) {
     passport.authenticate("local", function (err, user) {
@@ -75,7 +73,6 @@ const loginDev = function (req, res, next) {
         });
     })(req, res, next);
 };
->>>>>>> auth/form-validation
 
 const logOutDev = function (req, res) {
     if (!req.isAuthenticated()) {
