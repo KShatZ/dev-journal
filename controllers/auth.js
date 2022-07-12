@@ -1,5 +1,6 @@
 const Dev = require("../models/dev");
 const generatePass = require("../auth/utils/password").generate;
+const passport = require("../auth/passport-config");
 
 const getRegisterPage = function (req, res) {
     if (!req.isAuthenticated()) {
@@ -51,6 +52,29 @@ const registerNewDev = async function (req, res) {
     });
 };
 
+const loginDev = function (req, res, next) {
+    passport.authenticate("local", function (err, user) {
+        if (err) {
+            // To-Do Proper Error Handling
+            console.log("PassportAuthenticateError:", err);
+            return res.status(500).end();
+        }
+        
+        if(!user) {
+            return res.status(401).end();
+        }
+
+        req.login(user, function (err) {
+            if (err) {
+                // To-Do Propper Error Handling
+                console.log("LoginError:", err);
+                return res.status(500).end()
+            }
+            return res.status(200).end();
+        });
+    })(req, res, next);
+};
+
 const logOutDev = function (req, res) {
     if (!req.isAuthenticated()) {
 		return res.redirect("/");
@@ -63,5 +87,6 @@ module.exports = {
     getRegisterPage,
     getLoginPage,
     registerNewDev,
+    loginDev,
     logOutDev
 };
